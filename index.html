@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>TXTLD BUDS - Concept</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+<body>
+
+      <div class="container">
+            <div class="left"></div>
+            <div class="right"></div>
+
+            <div class="nav">
+                  <div class="logo">TXTLD BUDS</div>
+
+                  <div class="next"><i class="fa fa-angle-right"></i></div>
+
+                  <div class="watch"><i class="fa fa-caret-right"></i>&nbsp; cadastre-se para mais informações</div>
+
+                  <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+            </div>
+
+            <div class="right-sidebar">
+           
+                  <div class="label-float">
+                 
+                        <input type="text" id= "nome" placeholder=" "/>
+                        <label id="labelNome" for="nome">Nome</label>
+                   </div>
+                   <div class="label-float">
+                        <p>
+
+                        <input type="text" id= "sobrenome" placeholder="  "/>
+                        <label id="labelSobre" for="sobrenome">Sobrenome</label>
+                        <p>
+
+                        </div>
+
+                        <div class="label-float">
+                        <input type="text" id= "email" placeholder="  "/>
+                        <label id="labelEmail" for="email">E-mail</label>
+                        </div>
+                  
+                        <p>
+                        <div class="justify-center">
+                              <button onclick='cadastrar()'>Cadastrar</button>
+                        </div>
+                    
+                
+                  </div>
+            </div>
+
+            <div class="left-bottom">
+                  <p>Earbuds TXTLD pro - Your best audio experience</p>
+            </div>
+
+            <div class="left-sidebar">
+
+
+                  <h1 class="product-title">TXTLD Buds All Black</h1>
+
+                  <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati culpa veniam enim quam, sunt officiis, maiores quod esse molestias a!</p>
+
+                  <p id="price">Preço : R$ 199,99</p>
+
+                  <button class="btn">COMPRE AGORA</button>
+
+            </div>
+
+            <div class="product" id="product">
+                  <img src="earbuds.png" height="300px" width="300px">
+            </div>
+
+
+<div class="footer">
+
+</div>
+      </div>
+
+      <script type="text/javascript">
+
+      TweenMax.from(".right", 1.6, {
+           delay: 0.6,
+           // opacity: 0,
+           // x: -20,
+           width: 0,
+           ease: Expo.easeInOut
+     });
+
+      TweenMax.from(".logo", 1, {
+            delay: 1,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".next", 1, {
+            delay: 1.2,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".watch", 1, {
+            delay: 1.4,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".cart", 1, {
+            delay: 1.6,
+            opacity: 0,
+            x: -20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".product-title", 2, {
+            delay: 1.6,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".desc", 2, {
+            delay: 1.8,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from("#price", 2, {
+            delay: 2,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.from(".btn", 2, {
+            delay: 2.2,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.staggerFrom(".right-sidebar ul li", 1, {
+            delay: 2.6,
+            opacity: 0,
+            y: 20,
+            ease: Power3.easeInOut
+      }, 0.08);
+
+      TweenMax.from(".left-bottom", 2, {
+            delay: 2.8,
+            opacity: 0,
+            y: 20,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.staggerFrom(".media ul li", 1, {
+            delay: 3.6,
+            opacity: 0,
+            y: 20,
+            ease: Power3.easeInOut
+      }, 0.08);
+
+      TweenMax.from(".product img", 3, {
+            delay: 2,
+            // opacity: 0,
+            // y: 20,
+            scale: 0,
+            ease: Expo.easeInOut
+      });
+
+      TweenMax.to(".product img", 3, {
+            delay: 2,
+            // opacity: 0,
+            // y: 20,
+            scale: 1,
+            ease: Expo.easeInOut
+      });
+
+
+let nome = document.querySelector('#nome')
+let labelNome = document.querySelector('#labelNome')
+
+
+let sobrenome = document.querySelector('#sobrenome')
+let labelSobre = document.querySelector('#labelSobre')
+
+let email = document.querySelector('#email')
+let labelEmail = document.querySelector('#labelEmail')
+
+nome.addEventListener('keyup', () => {
+  if(nome.value.length <= 2){
+    labelNome.setAttribute('style', 'color: red')
+    labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
+    nome.setAttribute('style', 'border-color: red')
+    validNome = false
+  } else {
+    labelNome.setAttribute('style', 'color: green')
+    labelNome.innerHTML = 'Nome'
+    nome.setAttribute('style', 'border-color: green')
+    validNome = true
+  }
+})
+
+sobrenome.addEventListener('keyup', () => {
+  if(sobrenome.value.length <= 4){
+    labelSobre.setAttribute('style', 'color: red')
+    labelSobre.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
+    sobrenome.setAttribute('style', 'border-color: red')
+    validSobrenome = false
+  } else {
+    labelSobre.setAttribute('style', 'color: green')
+    labelSobre.innerHTML = 'Usuário'
+    sobrenome.setAttribute('style', 'border-color: green')
+    validSobrenome = true
+  }
+})
+
+email.addEventListener('keyup', () => {
+  if(email.value.length <= 5){
+    labelEmail.setAttribute('style', 'color: red')
+    labelEmail.innerHTML = 'Senha *Insira no minimo 6 caracteres'
+    email.setAttribute('style', 'border-color: red')
+    validEmail = false
+  } else {
+    labelEmail.setAttribute('style', 'color: green')
+    labelEmail.innerHTML = 'Senha'
+    email.setAttribute('style', 'border-color: green')
+    valiEmail = true
+  }
+})
+
+function cadastrar(){
+  if(validNome && validSobre && validEmail){
+    let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+    
+    listaUser.push(
+    {
+      nomeCad: nome.value,
+      sobrenomeCad: sobrenome.value,
+      emailCad: email.value
+    }
+    )
+    
+    localStorage.setItem('listaUser', JSON.stringify(listaUser))
+    
+   
+    msgSuccess.setAttribute('style', 'display: block')
+    msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
+    msgError.setAttribute('style', 'display: none')
+    msgError.innerHTML = ''
+    
+    setTimeout(()=>{
+        window.location.href = 'https://cdpn.io/thicode/debug/ZELzYxV/dXAqBaRyvwJk'
+    }, 3000)
+  
+    
+  } else {
+    msgError.setAttribute('style', 'display: block')
+    msgError.innerHTML = '<strong>Preencha todos os campos corretamente antes de cadastrar</strong>'
+    msgSuccess.innerHTML = ''
+    msgSuccess.setAttribute('style', 'display: none')
+  }
+}
+
+      </script>
+</body>
+
+</html>
